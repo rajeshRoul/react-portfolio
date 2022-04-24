@@ -1,0 +1,21 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 20px;
+    display: flex;
+}
+
+.ctr1 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ctr2 {
+    height: 100%;
+    width: 50%;
+}
