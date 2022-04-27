@@ -1,10 +1,18 @@
 .main {
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     box-sizing: border-box;
     margin: 0px;
     padding: 20px;
     display: flex;
+    background: linear-gradient(109deg, #a600d9, #002687, #030048, #000000);
+    background-size: 400% 400%;
+    position: relative;
+    -webkit-animation: backgroundGradient 30s ease infinite;
+    -moz-animation: backgroundGradient 30s ease infinite;
+    -o-animation: backgroundGradient 30s ease infinite;
+    animation: backgroundGradient 30s ease infinite;
 }
 
 .ctr1 {
@@ -18,4 +26,71 @@
 .ctr2 {
     height: 100%;
     width: 50%;
+}
+
+.star {
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    -webkit-animation: starsTwinkle 1s ease-in infinite alternate;
+    -moz-animation: starsTwinkle 1s ease-in infinite alternate;
+    -o-animation: starsTwinkle 1s ease-in infinite alternate;
+    animation: starsTwinkle 1s ease-in infinite alternate;
+}
+
+.starSmall {
+    height: 0.5px;
+    width: 0.5px;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    -webkit-animation: starsTwinkle 1s ease-in infinite alternate;
+    -moz-animation: starsTwinkle 1s ease-in infinite alternate;
+    -o-animation: starsTwinkle 1s ease-in infinite alternate;
+    animation: starsTwinkle 1s ease-in infinite alternate;
+}
+
+
+/******************************************************
+                       ANIMATIONS
+*******************************************************/
+
+@-webkit-keyframes starsTwinkle {
+    0%{box-shadow: 0 0 3px 1px rgb(194 194 194);}
+    100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
+}
+@-moz-keyframes starsTwinkle {
+    0%{box-shadow: 0 0 3px 1px rgb(194 194 194);}
+    100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
+}
+@-o-keyframes starsTwinkle {
+    0%{box-shadow: 0 0 3px 1px rgb(194 194 194);}
+    100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
+}
+@keyframes starsTwinkle {
+    0%{box-shadow: 0 0 3px 1px rgb(194 194 194);}
+    100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
+}
+
+@-webkit-keyframes backgroundGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes backgroundGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes backgroundGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@keyframes backgroundGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
 }
