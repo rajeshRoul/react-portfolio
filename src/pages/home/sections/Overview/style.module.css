@@ -13,6 +13,7 @@
     -moz-animation: backgroundGradient 30s ease infinite;
     -o-animation: backgroundGradient 30s ease infinite;
     animation: backgroundGradient 30s ease infinite;
+    cursor: pointer;
 }
 
 .ctr1 {
@@ -29,11 +30,11 @@
 }
 
 .star {
-    height: 1px;
-    width: 1px;
+    height: 0.13rem;
+    width: 0.13rem;
     position: absolute;
     background-color: #ffffff;
-    border-radius: 50%;
+    border-radius: 10px;
     -webkit-animation: starsTwinkle 1s ease-in infinite alternate;
     -moz-animation: starsTwinkle 1s ease-in infinite alternate;
     -o-animation: starsTwinkle 1s ease-in infinite alternate;
@@ -41,15 +42,38 @@
 }
 
 .starSmall {
-    height: 0.5px;
-    width: 0.5px;
+    height: 0.08rem;
+    width: 0.08rem;
     position: absolute;
     background-color: #ffffff;
-    border-radius: 50%;
+    border-radius: 10px;
     -webkit-animation: starsTwinkle 1s ease-in infinite alternate;
     -moz-animation: starsTwinkle 1s ease-in infinite alternate;
     -o-animation: starsTwinkle 1s ease-in infinite alternate;
     animation: starsTwinkle 1s ease-in infinite alternate;
+}
+
+.starIcon {
+    height: 0.5rem;
+    width: 0.5rem;
+    position: absolute;
+    -webkit-animation: starsIconTwinkle 1s ease-in infinite alternate;
+    -moz-animation: starsIconTwinkle 1s ease-in infinite alternate;
+    -o-animation: starsIconTwinkle 1s ease-in infinite alternate;
+    animation: starsIconTwinkle 1s ease-in infinite alternate;
+}
+
+.moon {
+    position: absolute;
+     top: 15px;
+     left: 50px;
+     height: 100px;
+     width: 100px;
+     border-radius: 50%;
+     -webkit-animation: moon 15s ease-in-out infinite alternate;
+    -moz-animation: moon 15s ease-in-out infinite alternate;
+    -o-animation: moon 15s ease-in-out infinite alternate;
+     animation: moon 15s ease-in-out infinite alternate;
 }
 
 
@@ -57,20 +81,57 @@
                        ANIMATIONS
 *******************************************************/
 
+@-webkit-keyframes moon {
+    0%{box-shadow: -15px 15px 0 5px #ffffff;}
+    100%{box-shadow: -15px 15px 0 5px rgb(232, 226, 124);}
+}
+@-moz-keyframes moon {
+    0%{box-shadow: -15px 15px 0 5px #ffffff;}
+    100%{box-shadow: -15px 15px 0 5px rgb(232, 226, 124);}
+}
+@-o-keyframes moon {
+    0%{box-shadow: -15px 15px 0 5px #ffffff;}
+    100%{box-shadow: -15px 15px 0 5px rgb(232, 226, 124);}
+}
+@keyframes moon {
+    0%{box-shadow: -15px 15px 0 5px #ffffff;}
+    100%{box-shadow: -15px 15px 0 5px rgb(232, 226, 124);}
+}
+
+@-webkit-keyframes starsIconTwinkle {
+    0%{-webkit-filter: none}
+    50%{-webkit-filter: drop-shadow(0 0 3px #f6f5f5);}
+    100%{-webkit-filter: drop-shadow(0 0 6px #FFFFFF);}
+}
+
+@-moz-keyframes starsIconTwinkle {
+    0%{-webkit-filter: none}
+    50%{-webkit-filter: drop-shadow(0 0 3px #f6f5f5);}
+    100%{-webkit-filter: drop-shadow(0 0 6px #FFFFFF);}}
+@-o-keyframes starsIconTwinkle {
+    0%{-webkit-filter: none}
+    50%{-webkit-filter: drop-shadow(0 0 3px #f6f5f5);}
+    100%{-webkit-filter: drop-shadow(0 0 6px #FFFFFF);}}
+@keyframes starsIconTwinkle {
+    0%{-webkit-filter: none}
+    50%{-webkit-filter: drop-shadow(0 0 3px #f6f5f5);}
+    100%{-webkit-filter: drop-shadow(0 0 6px #FFFFFF);}}
+
+
 @-webkit-keyframes starsTwinkle {
-    0%{box-shadow: 0 0 3px 1px rgb(194 194 194);}
+    0%{box-shadow: 0 0 1px 0.5px rgb(194 194 194);}
     100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
 }
 @-moz-keyframes starsTwinkle {
-    0%{box-shadow: 0 0 3px 1px rgb(194 194 194);}
+    0%{box-shadow: 0 0 1px 0.5px rgb(194 194 194);}
     100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
 }
 @-o-keyframes starsTwinkle {
-    0%{box-shadow: 0 0 3px 1px rgb(194 194 194);}
+    0%{box-shadow: 0 0 1px 0.5px rgb(194 194 194);}
     100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
 }
 @keyframes starsTwinkle {
-    0%{box-shadow: 0 0 3px 1px rgb(194 194 194);}
+    0%{box-shadow: 0 0 1px 0.5px rgb(194 194 194);}
     100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
 }
 
