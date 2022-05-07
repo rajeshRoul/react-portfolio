@@ -1,0 +1,17 @@
+.main {
+    width: 100%;
+    padding: 6rem 3rem;
+    box-sizing: border-box;
+    background-color: rgb(9, 19, 123);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutText {
+    font-family: "Open Sans Regular";
+    font-size: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+}

@@ -15,19 +15,16 @@ const Overview = () => {
   const handleAddStar = (e) => {
     setUserStars((prev) => [
       ...prev,
-      <div
-        key={`starBig${e.clientX - e.clientY}post`}
+      <img
+        key={`starBig${e.timeStamp}post`}
         className={classes.starIcon}
+        src={StarIcon}
+        alt=""
         style={{
-          top: `${e.clientY - 15}px`,
-          left: `${e.clientX - 3}px`
-        }}>
-        <img
-          src={StarIcon}
-          alt=""
-          style={{ height: "0.5rem", width: "0.5rem" }}
-        />
-      </div>
+          top: `${e.pageY - 4}px`,
+          left: `${e.pageX - 4}px`
+        }}
+      />
     ]);
   };
 
@@ -39,8 +36,8 @@ const Overview = () => {
           key={`star${i}pre`}
           className={classes.star}
           style={{
-            top: `${randomIntFromInterval(0, 100)}%`,
-            left: `${randomIntFromInterval(0, 100)}%`,
+            top: `calc(${randomIntFromInterval(0, 100)}% - 0.15rem)`,
+            left: `calc(${randomIntFromInterval(0, 100)}% - 0.15rem)`,
             animationDelay: `${randomIntFromInterval(0, 3)}s`
           }}
         />
@@ -52,8 +49,8 @@ const Overview = () => {
           key={`starSmall${i}pre`}
           className={classes.starSmall}
           style={{
-            top: `${randomIntFromInterval(0, 100)}%`,
-            left: `${randomIntFromInterval(0, 100)}%`,
+            top: `calc(${randomIntFromInterval(0, 100)}% - 0.1rem)`,
+            left: `calc(${randomIntFromInterval(0, 100)}% - 0.1rem)`,
             animationDelay: `${randomIntFromInterval(0, 3)}s`
           }}
         />
@@ -61,20 +58,17 @@ const Overview = () => {
     }
     for (let i = 0; i < 10; ++i) {
       stars.push(
-        <div
+        <img
+          src={StarIcon}
+          alt=""
           key={`starIcon${i}pre`}
           className={classes.starIcon}
           style={{
-            top: `${randomIntFromInterval(0, 100)}%`,
-            left: `${randomIntFromInterval(0, 100)}%`,
+            top: `calc(${randomIntFromInterval(0, 100)}% - 1rem)`,
+            left: `calc(${randomIntFromInterval(0, 100)}% - 1rem)`,
             animationDelay: `${randomIntFromInterval(0, 3)}s`
-          }}>
-          <img
-            src={StarIcon}
-            alt=""
-            style={{ height: "0.5rem", width: "0.5rem" }}
-          />
-        </div>
+          }}
+        />
       );
     }
     setStars(stars);
@@ -90,7 +84,7 @@ const Overview = () => {
       className={classes.main}
       onClick={handleAddStar}>
       {stars} {userStars}
-      <div className={classes.moon}></div>
+      <div className={classes.moon} />
       <div className={classes.ctr1}>
         <NameContainer name={"Rajesh Roul"} designation={"Software Engineer"} />
       </div>
