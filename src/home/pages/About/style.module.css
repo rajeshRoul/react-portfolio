@@ -1,9 +1,10 @@
 .main {
     width: 100%;
-    padding: 6rem 3rem;
+    padding: 4rem 3rem 6rem;
     box-sizing: border-box;
     background-color: rgb(9, 19, 123);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -14,4 +15,16 @@
     color: #FFFFFF;
     text-align: center;
     width: 100%;
+}
+
+.heading {
+    color: #ffffff;
+    display: flex;
+    margin-bottom: 2rem;
+    font-family: "Open Sans Bold";
+    font-size: 20px;
+}
+
+.heading span {
+    margin-left: 15px;
 }

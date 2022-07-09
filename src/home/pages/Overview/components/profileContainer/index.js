@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./style.module.css";
-import ProfileImg from "../../../../../../assets/images/ProfileImg.png";
+import ProfileImg from "../../../../../assets/images/ProfileImg.png";
 
 const ProfileContainer = () => {
   return (
@@ -8,6 +8,7 @@ const ProfileContainer = () => {
       <img
         src={ProfileImg}
         alt=""
+        key="profilePic"
         style={{ height: 500 }}
         className={classes.profileImg}
       />
@@ -15,4 +16,4 @@ const ProfileContainer = () => {
   );
 };
 
-export default ProfileContainer;
+export default React.memo(ProfileContainer);

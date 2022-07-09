@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import About from "./sections/About";
-import Overview from "./sections/Overview";
+import StarryBackground from "./components/StarryBackground";
 import classes from "./style.module.css";
 
 const Home = () => {
@@ -12,10 +11,9 @@ const Home = () => {
 
   return (
     <div className={classes.main} id="mains" ref={divRef}>
-      <Overview />
-      <About />
+      <StarryBackground />
     </div>
   );
 };
 
-export default Home;
+export default React.memo(Home);

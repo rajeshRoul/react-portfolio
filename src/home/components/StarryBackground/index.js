@@ -1,10 +1,9 @@
 import React, { useLayoutEffect, useState } from "react";
-import NameContainer from "./components/nameContainer";
 import classes from "./style.module.css";
-import StarIcon from "../../../../assets/icons/StarIcon.png";
-import ProfileContainer from "./components/profileContainer";
+import StarIcon from "../../../assets/icons/StarIcon.png";
+import PageManager from "../PageManager";
 
-const Overview = () => {
+const StarryBackground = () => {
   const [stars, setStars] = useState([]);
   const [userStars, setUserStars] = useState([]);
 
@@ -85,14 +84,9 @@ const Overview = () => {
       onClick={handleAddStar}>
       {stars} {userStars}
       <div className={classes.moon} />
-      <div className={classes.ctr1}>
-        <NameContainer name={"Rajesh Roul"} designation={"Software Engineer"} />
-      </div>
-      <div className={classes.ctr2}>
-        <ProfileContainer />
-      </div>
+      <PageManager />
     </div>
   );
 };
 
-export default Overview;
+export default StarryBackground;
