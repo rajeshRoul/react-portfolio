@@ -1,0 +1,53 @@
+.navBar {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  padding: 5px;
+  width: min-content;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 10px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0 0 5px 1px #ffffff;
+  transition: all 0.5s ease-in-out;
+  min-width: 30px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.icon svg {
+  height: 20px;
+  width: 20px;
+}
+
+.icon .label {
+  font-family: "Open Sans SemiBold";
+  flex-shrink: 0;
+  margin-left: 0px;
+  white-space: nowrap;
+  width: 0px;
+  overflow: hidden;
+}
+
+.icon:hover {
+  box-shadow: 0 0 4px 3px #ffffff;
+}
+
+.icon.active {
+  box-shadow: 0 0 4px 3px #ffffff;
+}
+
+.icon:hover .label {
+  width: auto;
+  margin-left: 5px;
+  transition: width 1s ease-in-out;
+}

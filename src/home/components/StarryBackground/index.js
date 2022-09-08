@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import classes from "./style.module.css";
 import StarIcon from "../../../assets/icons/StarIcon.png";
 import PageManager from "../PageManager";
@@ -16,7 +16,7 @@ const StarryBackground = () => {
       ...prev,
       <img
         key={`starBig${e.timeStamp}post`}
-        className={classes.starIcon}
+        className={`${classes.starIcon} ${classes.addStar}`}
         src={StarIcon}
         alt=""
         style={{
@@ -29,7 +29,7 @@ const StarryBackground = () => {
 
   const initializeStars = () => {
     let stars = [];
-    for (let i = 0; i < 60; ++i) {
+    for (let i = 0; i < 80; ++i) {
       stars.push(
         <div
           key={`star${i}pre`}
@@ -42,7 +42,7 @@ const StarryBackground = () => {
         />
       );
     }
-    for (let i = 0; i < 40; ++i) {
+    for (let i = 0; i < 60; ++i) {
       stars.push(
         <div
           key={`starSmall${i}pre`}
@@ -55,7 +55,7 @@ const StarryBackground = () => {
         />
       );
     }
-    for (let i = 0; i < 10; ++i) {
+    for (let i = 0; i < 25; ++i) {
       stars.push(
         <img
           src={StarIcon}
@@ -73,6 +73,8 @@ const StarryBackground = () => {
     setStars(stars);
   };
 
+  useEffect(() => {}, []);
+
   useLayoutEffect(() => {
     initializeStars();
   }, []);
@@ -82,9 +84,12 @@ const StarryBackground = () => {
       id="overview-container"
       className={classes.main}
       onClick={handleAddStar}>
-      {stars} {userStars}
-      <div className={classes.moon} />
-      <PageManager />
+      <div className={classes.orbit}>{stars}</div>
+      <div className={classes.userStarsCtr}>{userStars}</div>
+      <div className={classes.mainContent}>
+        <div className={classes.moon} />
+        <PageManager />
+      </div>
     </div>
   );
 };

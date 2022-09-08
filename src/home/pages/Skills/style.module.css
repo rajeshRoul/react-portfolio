@@ -21,14 +21,6 @@
   border: 0.3rem solid #ffffff;
 }
 
-.aboutText {
-  font-family: "Open Sans Regular";
-  font-size: 20px;
-  color: #ffffff;
-  text-align: center;
-  width: 100%;
-}
-
 .heading {
   color: #ffffff;
   display: flex;
@@ -39,4 +31,32 @@
 
 .heading span {
   margin-left: 15px;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+}
+
+.skillCtr {
+  position: relative;
+  min-width: 100px;
+  border-radius: 25px;
+  border: 2px solid #ffffff;
+  overflow: hidden;
+}
+
+.skillProgress {
+  position: absolute;
+  height: 100%;
+  background-color: green;
+  width: 50px;
+  z-index: 2;
+}
+
+.skillLabel {
+  position: relative;
+  margin: 5px 8px;
+  z-index: 10;
+  color: #ffffff;
 }

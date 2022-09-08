@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./style.module.css";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { brands } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
+import { brands } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const NameContainer = ({ name, designation }) => {
   return (

@@ -1,147 +1,319 @@
 .main {
-    width: 100vw;
-    height: 100vh;
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 20px;
-    background: linear-gradient(109deg, #a600d9, #002687, #030048, #000000);
-    background-size: 400% 400%;
-    position: relative;
-    -webkit-animation: backgroundGradient 30s ease infinite;
-    -moz-animation: backgroundGradient 30s ease infinite;
-    -o-animation: backgroundGradient 30s ease infinite;
-    animation: backgroundGradient 30s ease infinite;
-    cursor: pointer;
-    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0px;
+  overflow: hidden;
+  padding: 0px;
+  background: linear-gradient(109deg, #a600d9, #002687, #030048, #000000);
+  background-size: 400% 400%;
+  position: relative;
+  -webkit-animation: backgroundGradient 30s ease infinite;
+  -moz-animation: backgroundGradient 30s ease infinite;
+  -o-animation: backgroundGradient 30s ease infinite;
+  animation: backgroundGradient 30s ease infinite;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.mainContent {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  /* padding: 20px; */
+  box-sizing: border-box;
 }
 
 .star {
-    height: 0.13rem;
-    width: 0.13rem;
-    position: absolute;
-    background-color: #ffffff;
-    border-radius: 10px;
-    -webkit-animation: starsTwinkle 1s ease-in infinite alternate;
-    -moz-animation: starsTwinkle 1s ease-in infinite alternate;
-    -o-animation: starsTwinkle 1s ease-in infinite alternate;
-    animation: starsTwinkle 1s ease-in infinite alternate;
+  height: 0.13rem;
+  width: 0.13rem;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-animation: starsTwinkle 1s ease-in infinite alternate;
+  -moz-animation: starsTwinkle 1s ease-in infinite alternate;
+  -o-animation: starsTwinkle 1s ease-in infinite alternate;
+  animation: starsTwinkle 1s ease-in infinite alternate;
 }
 
 .starSmall {
-    height: 0.08rem;
-    width: 0.08rem;
-    position: absolute;
-    background-color: #ffffff;
-    border-radius: 10px;
-    -webkit-animation: starsTwinkle 1s ease-in infinite alternate;
-    -moz-animation: starsTwinkle 1s ease-in infinite alternate;
-    -o-animation: starsTwinkle 1s ease-in infinite alternate;
-    animation: starsTwinkle 1s ease-in infinite alternate;
+  height: 0.08rem;
+  width: 0.08rem;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-animation: starsTwinkle 1s ease-in infinite alternate;
+  -moz-animation: starsTwinkle 1s ease-in infinite alternate;
+  -o-animation: starsTwinkle 1s ease-in infinite alternate;
+  animation: starsTwinkle 1s ease-in infinite alternate;
 }
 
 .starIcon {
-    padding: 0px;
-    margin: 0px;
-    height: 8px;
-    width: 8px;
-    position: absolute;
-    -webkit-animation: starsIconTwinkle 1s ease-in infinite alternate;
-    -moz-animation: starsIconTwinkle 1s ease-in infinite alternate;
-    -o-animation: starsIconTwinkle 1s ease-in infinite alternate;
-    animation: starsIconTwinkle 1s ease-in infinite alternate;
+  padding: 0px;
+  margin: 0px;
+  height: 8px;
+  width: 8px;
+  position: absolute;
+  -webkit-animation: starsIconTwinkle 1s ease-in infinite alternate;
+  -moz-animation: starsIconTwinkle 1s ease-in infinite alternate;
+  -o-animation: starsIconTwinkle 1s ease-in infinite alternate;
+  animation: starsIconTwinkle 1s ease-in infinite alternate;
+}
+
+.addStar {
+  animation: starsIconTwinkle 1s ease-in infinite alternate,
+    addStarAnimation 0.75s ease-in 1 alternate;
 }
 
 .moon {
-    position: absolute;
-     top: 15px;
-     left: 50px;
-     height: 100px;
-     width: 100px;
-     border-radius: 50%;
-     -webkit-animation: moon 15s ease-in-out infinite alternate;
-    -moz-animation: moon 15s ease-in-out infinite alternate;
-    -o-animation: moon 15s ease-in-out infinite alternate;
-     animation: moon 15s ease-in-out infinite alternate;
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  -webkit-animation: moon 15s ease-in-out infinite alternate;
+  -moz-animation: moon 15s ease-in-out infinite alternate;
+  -o-animation: moon 15s ease-in-out infinite alternate;
+  animation: moon 15s ease-in-out infinite alternate;
 }
 
+.orbit {
+  position: absolute;
+  height: 100vw;
+  width: 100vw;
+  right: 0;
+  bottom: 0;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: orbit;
+  -webkit-animation-duration: 5s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -moz-animation-name: orbit;
+  -moz-animation-duration: 5s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+  -o-animation-name: orbit;
+  -o-animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: orbit;
+  animation-duration: 600s;
+}
+
+.userStarsCtr {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
 
 /******************************************************
                        ANIMATIONS
 *******************************************************/
 
+@keyframes addStarAnimation {
+  0% {
+    height: 8px;
+    width: 8px;
+  }
+  50% {
+    height: 12px;
+    width: 12px;
+  }
+  100% {
+    height: 8px;
+    width: 8px;
+  }
+}
+
+@-webkit-keyframes orbit {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes orbit {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes orbit {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @-webkit-keyframes moon {
-    0%{box-shadow: -15px 15px 0 5px #ffffff;}
-    100%{box-shadow: -15px 15px 0 5px rgb(232, 226, 124);}
+  0% {
+    box-shadow: -15px 15px 0 5px #ffffff;
+  }
+  100% {
+    box-shadow: -15px 15px 0 5px rgb(232, 226, 124);
+  }
 }
 @-moz-keyframes moon {
-    0%{box-shadow: -15px 15px 0 5px #ffffff;}
-    100%{box-shadow: -15px 15px 0 5px rgb(232, 226, 124);}
+  0% {
+    box-shadow: -15px 15px 0 5px #ffffff;
+  }
+  100% {
+    box-shadow: -15px 15px 0 5px rgb(232, 226, 124);
+  }
 }
 @-o-keyframes moon {
-    0%{box-shadow: -15px 15px 0 5px #ffffff;}
-    100%{box-shadow: -15px 15px 0 5px rgb(232, 226, 124);}
+  0% {
+    box-shadow: -15px 15px 0 5px #ffffff;
+  }
+  100% {
+    box-shadow: -15px 15px 0 5px rgb(232, 226, 124);
+  }
 }
 @keyframes moon {
-    0%{box-shadow: -15px 15px 0 5px #ffffff;}
-    100%{box-shadow: -15px 15px 0 5px rgb(232, 226, 124);}
+  0% {
+    box-shadow: -15px 15px 0 5px #ffffff;
+  }
+  100% {
+    box-shadow: -15px 15px 0 5px rgb(232, 226, 124);
+  }
 }
 
 @-webkit-keyframes starsIconTwinkle {
-    0%{-webkit-filter: none}
-    50%{-webkit-filter: drop-shadow(0 0 3px #f6f5f5);}
-    100%{-webkit-filter: drop-shadow(0 0 6px #FFFFFF);}
+  0% {
+    -webkit-filter: none;
+  }
+  50% {
+    -webkit-filter: drop-shadow(0 0 3px #f6f5f5);
+  }
+  100% {
+    -webkit-filter: drop-shadow(0 0 6px #ffffff);
+  }
 }
 @-moz-keyframes starsIconTwinkle {
-    0%{-webkit-filter: none}
-    50%{-webkit-filter: drop-shadow(0 0 3px #f6f5f5);}
-    100%{-webkit-filter: drop-shadow(0 0 6px #FFFFFF);}
+  0% {
+    -webkit-filter: none;
+  }
+  50% {
+    -webkit-filter: drop-shadow(0 0 3px #f6f5f5);
+  }
+  100% {
+    -webkit-filter: drop-shadow(0 0 6px #ffffff);
+  }
 }
 @-o-keyframes starsIconTwinkle {
-    0%{-webkit-filter: none}
-    50%{-webkit-filter: drop-shadow(0 0 3px #f6f5f5);}
-    100%{-webkit-filter: drop-shadow(0 0 6px #FFFFFF);}
+  0% {
+    -webkit-filter: none;
+  }
+  50% {
+    -webkit-filter: drop-shadow(0 0 3px #f6f5f5);
+  }
+  100% {
+    -webkit-filter: drop-shadow(0 0 6px #ffffff);
+  }
 }
 @keyframes starsIconTwinkle {
-    0%{-webkit-filter: none}
-    50%{-webkit-filter: drop-shadow(0 0 3px #f6f5f5);}
-    100%{-webkit-filter: drop-shadow(0 0 6px #FFFFFF);}
+  0% {
+    -webkit-filter: none;
+  }
+  50% {
+    -webkit-filter: drop-shadow(0 0 3px #f6f5f5);
+  }
+  100% {
+    -webkit-filter: drop-shadow(0 0 6px #ffffff);
+  }
 }
-
 
 @-webkit-keyframes starsTwinkle {
-    0%{box-shadow: 0 0 1px 0.5px rgb(194 194 194);}
-    100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
+  0% {
+    box-shadow: 0 0 1px 0.5px rgb(194 194 194);
+  }
+  100% {
+    box-shadow: 0 0 3px 1px rgb(255 255 255);
+  }
 }
 @-moz-keyframes starsTwinkle {
-    0%{box-shadow: 0 0 1px 0.5px rgb(194 194 194);}
-    100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
+  0% {
+    box-shadow: 0 0 1px 0.5px rgb(194 194 194);
+  }
+  100% {
+    box-shadow: 0 0 3px 1px rgb(255 255 255);
+  }
 }
 @-o-keyframes starsTwinkle {
-    0%{box-shadow: 0 0 1px 0.5px rgb(194 194 194);}
-    100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
+  0% {
+    box-shadow: 0 0 1px 0.5px rgb(194 194 194);
+  }
+  100% {
+    box-shadow: 0 0 3px 1px rgb(255 255 255);
+  }
 }
 @keyframes starsTwinkle {
-    0%{box-shadow: 0 0 1px 0.5px rgb(194 194 194);}
-    100%{box-shadow: 0 0 3px 1px rgb(255 255 255);}
+  0% {
+    box-shadow: 0 0 1px 0.5px rgb(194 194 194);
+  }
+  100% {
+    box-shadow: 0 0 3px 1px rgb(255 255 255);
+  }
 }
 
 @-webkit-keyframes backgroundGradient {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 51%}
-    100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-moz-keyframes backgroundGradient {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 51%}
-    100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-o-keyframes backgroundGradient {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 51%}
-    100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes backgroundGradient {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 51%}
-    100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
