@@ -42,10 +42,10 @@
   position: absolute;
   background-color: #ffffff;
   border-radius: 10px;
-  -webkit-animation: starsTwinkle 1s ease-in infinite alternate;
+  /* -webkit-animation: starsTwinkle 1s ease-in infinite alternate;
   -moz-animation: starsTwinkle 1s ease-in infinite alternate;
   -o-animation: starsTwinkle 1s ease-in infinite alternate;
-  animation: starsTwinkle 1s ease-in infinite alternate;
+  animation: starsTwinkle 1s ease-in infinite alternate; */
 }
 
 .starIcon {
@@ -82,6 +82,8 @@
   position: absolute;
   height: 100vw;
   width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   right: 0;
   bottom: 0;
   -webkit-animation-iteration-count: infinite;

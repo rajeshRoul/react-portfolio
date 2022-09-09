@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import About from "../../pages/About";
-import Overview from "../../pages/Overview";
-import Skills from "../../pages/Skills";
+import React, { Suspense, useState } from "react";
+import Loading from "../Loading";
+const About = React.lazy(() => import("../../pages/About"));
+const Overview = React.lazy(() => import("../../pages/Overview"));
+const Skills = React.lazy(() => import("../../pages/Skills"));
+const Experience = React.lazy(() => import("../../pages/Experience"));
 import NavBar from "./components/NavBar";
 import classes from "./style.module.css";
 
@@ -16,16 +18,20 @@ const PageManager = () => {
         return <About />;
       case 3:
         return <Skills />;
+      case 4:
+        return <Experience />;
       default:
         return <Overview />;
     }
   };
 
   return (
-    <div className={classes.main}>
-      {getCurrentPage()}
-      <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
-    </div>
+    <Suspense fallback={<Loading />}>
+      <div className={classes.main}>
+        {getCurrentPage()}
+        <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      </div>
+    </Suspense>
   );
 };
 

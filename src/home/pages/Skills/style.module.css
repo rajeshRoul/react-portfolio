@@ -8,6 +8,7 @@
 
 .innerCtr {
   width: calc(100% - 40px);
+  max-height: 80vh;
   padding: 4rem 3rem 6rem;
   box-sizing: border-box;
   background-color: rgba(71, 71, 72, 0.242);
@@ -35,28 +36,39 @@
 
 .content {
   width: 100%;
+  overflow-y: auto;
   display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .skillCtr {
   position: relative;
-  min-width: 100px;
+  min-width: 120px;
   border-radius: 25px;
   border: 2px solid #ffffff;
   overflow: hidden;
+  cursor: default;
 }
 
 .skillProgress {
   position: absolute;
   height: 100%;
-  background-color: green;
-  width: 50px;
+  width: 0px;
   z-index: 2;
+  transition: width 0.25s;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
 }
 
 .skillLabel {
+  text-shadow: 0px 0px 3px #494949;
   position: relative;
-  margin: 5px 8px;
+  margin: 3px 12px;
   z-index: 10;
   color: #ffffff;
+  display: flex;
+  align-items: center;
 }

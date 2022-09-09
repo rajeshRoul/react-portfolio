@@ -51,5 +51,10 @@ const navItems = [
     page: 3,
     icon: solid("chalkboard-user"),
     label: "Skills"
+  },
+  {
+    page: 4,
+    icon: solid("briefcase"),
+    label: "Experience"
   }
 ];
