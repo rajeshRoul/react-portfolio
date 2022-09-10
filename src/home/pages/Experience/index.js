@@ -41,15 +41,20 @@ const Experience = () => {
         <div className={classes.content}>
           <div className={classes.contentInner}>
             <div className={classes.progressCtr}>
-              <div className={classes.plane}>
-                <FontAwesomeIcon icon={solid("fighter-jet")} size="lg" />
+              <div className={classes.planeCtr}>
+                <div className={classes.plane}>
+                  <FontAwesomeIcon icon={solid("fighter-jet")} size="lg" />
+                </div>
               </div>
-              {experiences.map((item, index) => (
-                <div
-                  key={`progressPoint-${index}`}
-                  className={classes.progresspoint}
-                />
-              ))}
+
+              <div className={classes.progressPointCtr}>
+                {experiences.map((item, index) => (
+                  <div
+                    key={`progressPoint-${index}`}
+                    className={classes.progresspoint}
+                  />
+                ))}
+              </div>
             </div>
             {experiences.map((item, index) => (
               <ExperienceItem key={`experience-${index}`} experience={item} />

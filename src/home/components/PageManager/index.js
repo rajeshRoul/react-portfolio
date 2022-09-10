@@ -4,6 +4,8 @@ const About = React.lazy(() => import("../../pages/About"));
 const Overview = React.lazy(() => import("../../pages/Overview"));
 const Skills = React.lazy(() => import("../../pages/Skills"));
 const Experience = React.lazy(() => import("../../pages/Experience"));
+const Education = React.lazy(() => import("../../pages/Education"));
+const Projects = React.lazy(() => import("../../pages/Projects"));
 import NavBar from "./components/NavBar";
 import classes from "./style.module.css";
 
@@ -20,6 +22,10 @@ const PageManager = () => {
         return <Skills />;
       case 4:
         return <Experience />;
+      case 5:
+        return <Education />;
+      case 6:
+        return <Projects />;
       default:
         return <Overview />;
     }

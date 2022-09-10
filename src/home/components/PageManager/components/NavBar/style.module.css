@@ -10,7 +10,7 @@
   padding: 5px;
   width: min-content;
   display: inline-flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin: 5px 10px;
   color: #ffffff;
@@ -25,8 +25,8 @@
 }
 
 .icon svg {
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
 }
 
 .icon .label {
