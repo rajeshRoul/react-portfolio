@@ -1,6 +1,7 @@
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import ProjectItem from "./components/ProjectItem";
 import TabBar from "./components/TabBar";
 import classes from "./style.module.css";
 
@@ -19,7 +20,9 @@ const Projects = () => {
           <span>Projects</span>
         </div>
         <TabBar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
-        <div className={classes.content}></div>
+        <div className={classes.content}>
+          <ProjectItem />
+        </div>
       </div>
     </div>
   );
