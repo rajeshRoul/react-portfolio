@@ -2,6 +2,7 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import ProjectItem from "./components/ProjectItem";
+import { personalProjects } from "./components/ProjectItem/projectsData";
 import TabBar from "./components/TabBar";
 import classes from "./style.module.css";
 
@@ -21,7 +22,9 @@ const Projects = () => {
         </div>
         <TabBar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
         <div className={classes.content}>
-          <ProjectItem />
+          {personalProjects.map((project, index) => (
+            <ProjectItem key={`personal-project-${index}`} data={project} />
+          ))}
         </div>
       </div>
     </div>
