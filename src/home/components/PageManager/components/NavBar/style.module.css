@@ -8,6 +8,12 @@
   gap: 10px;
 }
 
+.navBarInner {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
 .icon {
   padding: 5px;
   width: min-content;
@@ -52,4 +58,11 @@
   width: auto;
   margin-left: 5px;
   transition: width 1s ease-in-out;
+}
+
+@media only screen and (max-width: 635px) {
+  .navBar {
+    flex-direction: column;
+    bottom: 10px;
+  }
 }

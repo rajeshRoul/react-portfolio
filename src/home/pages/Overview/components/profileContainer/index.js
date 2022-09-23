@@ -9,7 +9,6 @@ const ProfileContainer = () => {
         src={ProfileImg}
         alt=""
         key="profilePic"
-        style={{ height: 500 }}
         className={classes.profileImg}
       />
     </div>

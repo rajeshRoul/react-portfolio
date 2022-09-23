@@ -1,12 +1,18 @@
 .main {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profileImg {
-    -webkit-filter: drop-shadow(0 0 15px #1b1b1b);
+  height: 400px;
+  -webkit-filter: drop-shadow(0 0 15px #1b1b1b);
 }
 
+@media only screen and (max-width: 635px) {
+  .profileImg {
+    height: 300px;
+  }
+}

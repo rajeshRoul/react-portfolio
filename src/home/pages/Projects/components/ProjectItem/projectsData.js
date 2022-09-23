@@ -73,7 +73,8 @@ export const learningProjects = [
     description: [
       "A Web Application created to learn NextJs, Typescript, Static Generation, Server Side Rendering and NextJs Routing etc."
     ],
-    github: "https://github.com/rajeshRoul/learn-nextjs"
+    github: "https://github.com/rajeshRoul/learn-nextjs",
+    liveProject: "https://learn-nextjs-rajeshroul.vercel.app/"
   }
 ];
 

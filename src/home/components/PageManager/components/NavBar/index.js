@@ -15,15 +15,19 @@ const NavBar = ({ currentPage, setCurrentPage }) => {
 
   return (
     <div className={classes.navBar}>
-      {navItems.map((item, index) => (
-        <div
-          key={`navItem-${index}`}
-          className={`${classes.icon} ${getActiveStyle(index + 1)}`}
-          onClick={(e) => onNavClick(e, item.page)}>
-          <FontAwesomeIcon icon={item.icon} size="sm" />
-          {item.label ? (
-            <div className={classes.label}>{item.label}</div>
-          ) : null}
+      {navItems.map((items, index) => (
+        <div key={`navItem-${index}`} className={classes.navBarInner}>
+          {items.map((item, itemIndex) => (
+            <div
+              key={`navItem-${index}-${itemIndex}`}
+              className={`${classes.icon} ${getActiveStyle(item.page)}`}
+              onClick={(e) => onNavClick(e, item.page)}>
+              <FontAwesomeIcon icon={item.icon} size="sm" />
+              {item.label ? (
+                <div className={classes.label}>{item.label}</div>
+              ) : null}
+            </div>
+          ))}
         </div>
       ))}
     </div>
@@ -38,33 +42,37 @@ NavBar.propTypes = {
 export default React.memo(NavBar);
 
 const navItems = [
-  {
-    page: 1,
-    icon: solid("user")
-  },
-  {
-    page: 2,
-    icon: solid("info"),
-    label: "About Me"
-  },
-  {
-    page: 3,
-    icon: solid("chalkboard-user"),
-    label: "Skills"
-  },
-  {
-    page: 4,
-    icon: solid("briefcase"),
-    label: "Experience"
-  },
-  {
-    page: 5,
-    icon: solid("university"),
-    label: "Education"
-  },
-  {
-    page: 6,
-    icon: solid("rocket"),
-    label: "Projects"
-  }
+  [
+    {
+      page: 1,
+      icon: solid("user")
+    },
+    {
+      page: 2,
+      icon: solid("info"),
+      label: "About Me"
+    },
+    {
+      page: 3,
+      icon: solid("chalkboard-user"),
+      label: "Skills"
+    },
+    {
+      page: 4,
+      icon: solid("briefcase"),
+      label: "Experience"
+    }
+  ],
+  [
+    {
+      page: 5,
+      icon: solid("university"),
+      label: "Education"
+    },
+    {
+      page: 6,
+      icon: solid("rocket"),
+      label: "Projects"
+    }
+  ]
 ];
